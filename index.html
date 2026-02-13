@@ -1,0 +1,413 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <!-- ============================================ -->
+    <!-- =====       TEMA 03 - ATIVIDADE       ===== -->
+    <!-- =====   CONTEÚDO DIGITAL E IDENTIDADE  ===== -->
+    <!-- ============================================ -->
+    
+    <!-- 
+        🎯 OBJETIVO DESTA ATIVIDADE:
+        
+        Você vai personalizar este template básico para criar
+        a identidade visual da sua agência de notícias!
+        
+        🔧 TAREFAS:
+        
+        1. ESCOLHA SUAS CORES (procure por "SUA COR AQUI")
+        2. ESCOLHA SUAS FONTES (procure por "SUA FONTE AQUI")  
+        3. ESCREVA SUAS NOTÍCIAS (procure por "EDITAR NOTÍCIA")
+        4. COLOQUE SUAS IMAGENS (pasta /imagens/)
+        5. OS LINKS "Leia mais" já levam para as páginas completas!
+        6. PUBLIQUE NO GITHUB PAGES!
+        
+        💡 DICA: Procure pelos comentários "🔴 ATENÇÃO"
+        Eles mostram exatamente onde você deve editar!
+    -->
+    
+    <title>Minha Agência de Notícias</title>
+    
+    <!-- ============================================ -->
+    <!-- =====   🎨 ÁREA DE CUSTOMIZAÇÃO DE CORES E FONTES   ===== -->
+    <!-- ============================================ -->
+    <style>
+        /* 
+        ================================================
+        🔴 ATENÇÃO: ESTA É A ÁREA DE PERSONALIZAÇÃO!
+        ================================================
+        
+        Altere APENAS os valores marcados com "SUA COR AQUI" 
+        e "SUA FONTE AQUI". O resto do código NÃO precisa 
+        ser modificado!
+        
+        EXEMPLOS DE CORES (copie e cole):
+        ---------------------------------
+        Azul:    #3498db
+        Verde:   #2ecc71  
+        Vermelho:#e74c3c
+        Roxo:    #9b59b6
+        Laranja: #f39c12
+        Cinza:   #34495e
+        
+        EXEMPLOS DE FONTES (copie e cole):
+        ----------------------------------
+        Arial:         Arial, sans-serif
+        Verdana:       Verdana, sans-serif
+        Times:         'Times New Roman', serif
+        Georgia:       Georgia, serif
+        Courier:       'Courier New', monospace
+        */
+        
+        /* ===== 🎨 CORES DA AGÊNCIA ===== */
+        :root {
+            /* 
+            🔴 ATENÇÃO: Substitua os valores abaixo PELAS SUAS CORES!
+               Mantenha o formato --nome-da-cor: #codigo;
+            */
+            --cor-principal:   #9b59b6;  /* 🔴 SUA COR PRINCIPAL AQUI (títulos, cabeçalho) */
+            --cor-secundaria:  #f39c12;  /* 🔴 SUA COR SECUNDÁRIA AQUI (botões, detalhes) */
+            --cor-destaque:    #000000;  /* 🔴 SUA COR DE DESTAQUE AQUI (tags, números) */
+        }
+        
+        /* ===== 📝 FONTES DA AGÊNCIA ===== */
+        body {
+            /* 
+            🔴 ATENÇÃO: Substitua o valor abaixo PELA SUA FONTE!
+            Esta fonte será usada em todos os textos corridos.
+            */
+            font-family: 'Segoe UI', Arial, sans-serif;  /* 🔴 SUA FONTE DO CORPO AQUI */
+            line-height: 1.6;
+            color: #333;
+            background-color: #f9f9f9;
+            margin: 0;
+            padding: 20px;
+        }
+        
+        h1, h2, h3, h4 {
+            /* 
+            🔴 ATENÇÃO: Substitua o valor abaixo PELA SUA FONTE!
+            Esta fonte será usada em todos os títulos.
+            */
+            font-family: 'Segoe UI', Arial, sans-serif;  /* 🔴 SUA FONTE DOS TÍTULOS AQUI */
+            color: var(--cor-principal);
+            margin-bottom: 10px;
+        }
+        
+        /* ============================================ */
+        /* =====   FIM DA ÁREA DE PERSONALIZAÇÃO   ===== */
+        /* =====   NÃO ALTERE NADA ABAIXO DISSO!   ===== */
+        /* ============================================ */
+        
+        /* LAYOUT BÁSICO (NÃO ALTERAR) */
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            background: white;
+            padding: 30px;
+            border-radius: 10px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+        }
+        
+        /* CABEÇALHO */
+        .cabecalho {
+            text-align: center;
+            padding: 40px 20px;
+            background: linear-gradient(135deg, var(--cor-principal), var(--cor-secundaria));
+            color: white;
+            border-radius: 8px;
+            margin-bottom: 40px;
+        }
+        
+        .cabecalho h1 {
+            color: white;
+            margin-bottom: 10px;
+            font-size: 2.5rem;
+        }
+        
+        .cabecalho p {
+            font-size: 1.2rem;
+            opacity: 0.9;
+        }
+        
+        /* GRID DE NOTÍCIAS */
+        .grade-noticias {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+            margin-bottom: 40px;
+        }
+        
+        /* CARD DE NOTÍCIA */
+        .card-noticia {
+            background: white;
+            border-radius: 8px;
+            overflow: hidden;
+            box-shadow: 0 3px 10px rgba(0,0,0,0.08);
+            border: 1px solid #eee;
+            transition: transform 0.3s;
+            display: flex;
+            flex-direction: column;
+        }
+        
+        .card-noticia:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 20px rgba(0,0,0,0.12);
+        }
+        
+        /* TAGS DE CATEGORIA */
+        .tag {
+            display: inline-block;
+            background: var(--cor-destaque);
+            color: white;
+            padding: 4px 12px;
+            border-radius: 20px;
+            font-size: 0.8rem;
+            font-weight: bold;
+            text-transform: uppercase;
+            margin-bottom: 15px;
+            align-self: flex-start;
+        }
+        
+        /* IMAGENS */
+        .imagem-noticia {
+            width: 100%;
+            height: 200px;
+            object-fit: cover;
+            display: block;
+        }
+        
+        /* CONTEÚDO DO CARD */
+        .card-conteudo {
+            padding: 20px;
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+        }
+        
+        .card-conteudo h3 {
+            margin: 10px 0;
+            font-size: 1.3rem;
+        }
+        
+        .card-conteudo p {
+            color: #666;
+            margin-bottom: 20px;
+            flex: 1;
+        }
+        
+        /* BOTÃO LEIA MAIS */
+        .botao {
+            display: inline-block;
+            background: var(--cor-secundaria);
+            color: white;
+            padding: 10px 20px;
+            border-radius: 5px;
+            text-decoration: none;
+            font-weight: 600;
+            transition: background 0.3s;
+            text-align: center;
+            margin-top: auto;
+        }
+        
+        .botao:hover {
+            opacity: 0.9;
+            transform: scale(1.02);
+        }
+        
+        /* RODAPÉ */
+        .rodape {
+            text-align: center;
+            margin-top: 40px;
+            padding: 30px;
+            background: var(--cor-principal);
+            color: white;
+            border-radius: 8px;
+        }
+        
+        /* EQUIPE */
+        .equipe {
+            display: flex;
+            justify-content: center;
+            gap: 30px;
+            margin: 30px 0;
+            flex-wrap: wrap;
+        }
+        
+        .membro {
+            text-align: center;
+        }
+        
+        .membro-avatar {
+            width: 60px;
+            height: 60px;
+            background: var(--cor-secundaria);
+            border-radius: 50%;
+            margin: 0 auto 10px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: bold;
+            font-size: 1.5rem;
+            color: white;
+        }
+        
+        /* RESPONSIVIDADE */
+        @media (max-width: 768px) {
+            .grade-noticias {
+                grid-template-columns: 1fr;
+            }
+            
+            .cabecalho h1 {
+                font-size: 2rem;
+            }
+            
+            .equipe {
+                flex-direction: column;
+                gap: 20px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <!-- ============================================ -->
+        <!-- =====   📰 CABEÇALHO DA AGÊNCIA       ===== -->
+        <!-- ============================================ -->
+        <!-- 
+            🔴 ATENÇÃO: Edite o NOME e o SLOGAN da sua agência!
+        -->
+        <header class="cabecalho">
+            <h1>AGÊNCIA ESCOLAR</h1>  <!-- 🔴 EDITAR: Nome da sua agência -->
+            <p>Notícias fresquinhas direto da nossa escola!</p>  <!-- 🔴 EDITAR: Slogan -->
+        </header>
+        
+        <!-- ============================================ -->
+        <!-- =====   📰 GRADE DE NOTÍCIAS           ===== -->
+        <!-- =====   EDITAR: CONTEÚDO DAS NOTÍCIAS  ===== -->
+        <!-- ============================================ -->
+        <div class="grade-noticias">
+            
+            <!-- 
+            ================================================
+            🔴 NOTÍCIA 1 - FORMATURA
+            ================================================
+            Edite: 
+            - tag (categoria)
+            - título
+            - imagem (src="imagens/SEU_ARQUIVO.jpg")
+            - texto
+            - link href="noticias/formatura.html" (não precisa mudar!)
+            -->
+            <article class="card-noticia">
+                <img src="noticias/imagem/imagem.jpg" alt="Alunos formandos" class="imagem-noticia">  <!-- 🔴 EDITAR: Caminho da imagem -->
+                <div class="card-conteudo">
+                    <span class="tag">🎓 EDUCAÇÃO</span>  <!-- 🔴 EDITAR: Categoria -->
+                    <h3>Formatura da Turma de Desenvolvimento</h3>  <!-- 🔴 EDITAR: Título -->
+                    <p>
+                        Alunos do curso técnico celebram conclusão do curso com cerimônia no auditório da escola. 
+                        Familiares e professores prestigiaram o evento emocionante.
+                    </p>  <!-- 🔴 EDITAR: Texto da notícia (1-2 frases) -->
+                    <a href="noticias/formatura.html" class="botao">📖 Ler notícia completa →</a>
+                </div>
+            </article>
+            
+            <!-- 
+            ================================================
+            🔴 NOTÍCIA 2 - FEIRA DE CIÊNCIAS
+            ================================================
+            Edite: 
+            - tag (categoria)
+            - título
+            - imagem (src="imagens/SEU_ARQUIVO.jpg")
+            - texto
+            - link href="noticias/feira-ciencias.html" (não precisa mudar!)
+            -->
+            <article class="card-noticia">
+                <img src="noticias/imagem/feira.jpg" alt="Feira de Ciências" class="imagem-noticia">  <!-- 🔴 EDITAR: Caminho da imagem -->
+                <div class="card-conteudo">
+                    <span class="tag">🔬 CIÊNCIAS</span>  <!-- 🔴 EDITAR: Categoria -->
+                    <h3>Escola vence Feira Regional com projeto sustentável</h3>  <!-- 🔴 EDITAR: Título -->
+                    <p>
+                        Projeto de energia solar desenvolvido por alunos do 3º ano conquista primeiro lugar 
+                        e garante vaga para etapa estadual.
+                    </p>  <!-- 🔴 EDITAR: Texto da notícia (1-2 frases) -->
+                    <a href="noticias/feira-ciencias.html" class="botao">📖 Ler notícia completa →</a>
+                </div>
+            </article>
+            
+            <!-- 
+            ================================================
+            🔴 NOTÍCIA 3 - FUTEBOL
+            ================================================
+            Edite: 
+            - tag (categoria)
+            - título
+            - imagem (src="imagens/SEU_ARQUIVO.jpg")
+            - texto
+            - link href="noticias/futebol.html" (não precisa mudar!)
+            -->
+            <article class="card-noticia">
+                <img src="noticias/imagem/time.jpg" alt="Time de futebol" class="imagem-noticia">  <!-- 🔴 EDITAR: Caminho da imagem -->
+                <div class="card-conteudo">
+                    <span class="tag">⚽ ESPORTES</span>  <!-- 🔴 EDITAR: Categoria -->
+                    <h3>Time da escola está na final do campeonato estudantil</h3>  <!-- 🔴 EDITAR: Título -->
+                    <p>
+                        Com gol nos acréscimos, equipe vence a semifinal e agora busca o título inédito 
+                        contra a escola campeã do ano passado.
+                    </p>  <!-- 🔴 EDITAR: Texto da notícia (1-2 frases) -->
+                    <a href="noticias/futebol.html" class="botao">📖 Ler notícia completa →</a>
+                </div>
+            </article>
+        </div>
+        
+        <!-- ============================================ -->
+        <!-- =====   👥 EQUIPE DA AGÊNCIA          ===== -->
+        <!-- ============================================ -->
+        <!-- 
+            🔴 ATENÇÃO: Edite os nomes e funções da sua equipe!
+        -->
+        <section style="margin-bottom: 40px;">
+            <h2 style="text-align: center;">📰 Nossa Equipe</h2>
+            <div class="equipe">
+                <div class="membro">
+                    <div class="membro-avatar">M</div>  <!-- 🔴 EDITAR: Inicial do nome -->
+                    <p><strong>matheus faria</strong></p>  <!-- 🔴 EDITAR: Nome completo -->
+                    <p style="color: #666;">Editor-chefe</p>  <!-- 🔴 EDITAR: Função -->
+                </div>
+                <div class="membro">
+                    <div class="membro-avatar">M</div>  <!-- 🔴 EDITAR: Inicial do nome -->
+                    <p><strong>Matheus</strong></p>  <!-- 🔴 EDITAR: Nome completo -->
+                    <p style="color: #666;">Webmaster</p>  <!-- 🔴 EDITAR: Função -->
+                </div>
+                <div class="membro">
+                    <div class="membro-avatar">M</div>  <!-- 🔴 EDITAR: Inicial do nome -->
+                    <p><strong>Matheus</strong></p>  <!-- 🔴 EDITAR: Nome completo -->
+                    <p style="color: #666;">Repórter</p>  <!-- 🔴 EDITAR: Função -->
+                </div>
+                <div class="membro">
+                    <div class="membro-avatar">M</div>  <!-- 🔴 EDITAR: Inicial do nome -->
+                    <p><strong>Matheus</strong></p>  <!-- 🔴 EDITAR: Nome completo -->
+                    <p style="color: #666;">Fotógrafo</p>  <!-- 🔴 EDITAR: Função -->
+                </div>
+            </div>
+        </section>
+        
+        <!-- ============================================ -->
+        <!-- =====   📅 RODAPÉ                    ===== -->
+        <!-- ============================================ -->
+        <footer class="rodape">
+            <h3 style="color: white; margin-bottom: 15px;">📌 AGÊNCIA ESCOLAR</h3>  <!-- 🔴 EDITAR: Nome da agência -->
+            <p style="margin-bottom: 10px;">Publicado em: 12 de março de 2026</p>  <!-- 🔴 EDITAR: Data -->
+            <p style="opacity: 0.8; font-size: 0.9rem;">
+                Projeto Integrador - Curso Técnico em Desenvolvimento de Sistemas
+            </p>
+            <p style="opacity: 0.7; font-size: 0.8rem; margin-top: 20px;">
+                <a href="index.html" style="color: white; text-decoration: none;">← Voltar para página inicial</a>
+            </p>
+        </footer>
+    </div>
+</body>
+</html>
